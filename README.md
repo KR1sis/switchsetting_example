@@ -1,4 +1,4 @@
-Wierd optimization by R8
+Weird optimization by R8
 
 Hi! 
 I stacked with odd behavior in my application in release. I suppose it’s related to some R8 optimization.
