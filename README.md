@@ -53,3 +53,13 @@ For repeat this behavior in sample I have to include in proguard-rules `keep` fo
 ```
 -keep class com.example.settingswitcher.PreferenceStorage
 ```
+
+Links:
+[video](https://disk.yandex.ru/d/uQdIqi3YHJztGQ)
+
+[apk with debuggable false](https://disk.yandex.ru/d/MY66dRN7vDroug)
+[apk with debuggable true](https://disk.yandex.ru/d/fQhTVCz0phY03Q)
+
+![PrefeenceStorage in dex. debuggable false](https://user-images.githubusercontent.com/4678187/164457000-33e13ff5-8a54-4a9e-a613-8bcdd1abb7f4.png)
+![PrefeenceStorage in dex. debuggable true](https://user-images.githubusercontent.com/4678187/164457621-324ea6dc-c9dd-4089-8c9f-810fde825f06.png)
+
