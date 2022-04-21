@@ -2,7 +2,7 @@ Wierd optimization by R8
 
 Hi! 
 I stacked with odd behavior in my application in release. I think it is connected with R8 optimization.
-I made a sample: 
+See my sample below: 
 
 ```
 class PreferenceStorage(context: Context) {
@@ -45,11 +45,11 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-And this code works fine in debug build. But if I built my app with `debuggable false` my Switch does not move.
+And this code works fine in debug build. But if I build my app with `debuggable false` my Switch does not move.
 I looked on my apk and noticed that in case `debuggable false` there is no field sharedPreferencesListener in class PreferenceStorage.
-I think it's optimization by R8. It inlines the sharedPreferencesListener field into init block and my apk lost strong reference on listener, so GC collect it.
+I suppose this happens due to optimization by R8. It inlines the sharedPreferencesListener field into init block and my apk lost strong reference on listener, so GC collect it.
 
-For repeat this behavior in sample I have to include in proguard-rules keep for my PreferenceStorage
+For repeat this behavior in sample I have to include in proguard-rules `keep` for my PreferenceStorage
 ```
 -keep class com.example.settingswitcher.PreferenceStorage
 ```
