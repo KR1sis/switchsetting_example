@@ -73,6 +73,7 @@ For repeat this behavior in sample I have to include in proguard-rules `keep` fo
 ```
 
 Links:
+
 [video](https://disk.yandex.ru/d/uQdIqi3YHJztGQ)
 
 [apk with debuggable false](https://disk.yandex.ru/d/MY66dRN7vDroug)
