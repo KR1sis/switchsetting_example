@@ -1,9 +1,24 @@
 Wierd optimization by R8
 
 Hi! 
-I stacked with odd behavior in my application in release. I think it is connected with R8 optimization.
+I stacked with odd behavior in my application in release. I suppose it's connected with R8 optimization.
 See my sample below: 
 
+
+app/build.gradle:
+```
+...
+buildTypes {
+        debug {
+            shrinkResources true
+            minifyEnabled true
+            debuggable true
+        }
+    }
+...
+```
+
+PreferenceStorage.kt:
 ```
 class PreferenceStorage(context: Context) {
 
@@ -27,7 +42,10 @@ class PreferenceStorage(context: Context) {
         sharedPreferences.registerOnSharedPreferenceChangeListener(sharedPreferencesListener)
     }
 }
+```
 
+MainActivity.kt:
+```
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +76,10 @@ Links:
 [video](https://disk.yandex.ru/d/uQdIqi3YHJztGQ)
 
 [apk with debuggable false](https://disk.yandex.ru/d/MY66dRN7vDroug)
+
 [apk with debuggable true](https://disk.yandex.ru/d/fQhTVCz0phY03Q)
 
 ![PrefeenceStorage in dex. debuggable false](https://user-images.githubusercontent.com/4678187/164457000-33e13ff5-8a54-4a9e-a613-8bcdd1abb7f4.png)
+
 ![PrefeenceStorage in dex. debuggable true](https://user-images.githubusercontent.com/4678187/164457621-324ea6dc-c9dd-4089-8c9f-810fde825f06.png)
 
