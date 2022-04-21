@@ -1,9 +1,17 @@
 Wierd optimization by R8
 
 Hi! 
-I stacked with odd behavior in my application in release. I suppose it's connected with R8 optimization.
+I stacked with odd behavior in my application in release. I suppose it’s related to some R8 optimization.
 See my sample below: 
 
+build.gradle: 
+```
+plugins {
+    id 'com.android.application' version '7.1.3' apply false
+    id 'com.android.library' version '7.1.3' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.20-M1' apply false
+}
+```
 
 app/build.gradle:
 ```
